@@ -2,8 +2,32 @@
 
 YouTube Bookmark is a lightweight and intuitive browser extension that allows users to save, manage, and revisit important timestamps from YouTube videos effortlessly. Designed to boost productivity and learning efficiency, it enables quick bookmarking of key moments without interrupting your viewing experience.
 
-![YouTube Bookmark Screenshot](https://raw.githubusercontent.com/Navnit-07/youtube-bookmark/main/assets/screenshot1.png)
-![YouTube Bookmark Screenshot](https://raw.githubusercontent.com/Navnit-07/youtube-bookmark/main/assets/screenshot2.png)
+---
+
+## PREVIEW
+
+<p align="center">
+  <img width="1321" height="802" alt="a"
+       src="https://github.com/user-attachments/assets/aa5d787b-109a-4b16-b39d-1d0ba9208138" />
+</p>
+
+
+---
+
+<p align="center">
+  <img width="415" height="221" alt="b"
+       src="https://github.com/user-attachments/assets/3933977a-242f-470d-9973-dbf8cbbeff25" />
+</p>
+
+
+---
+
+
+<p align="center">
+  <img width="399" height="87" alt="c"
+       src="https://github.com/user-attachments/assets/1ace6e17-fd65-4aa6-b9ab-4d2e1582408b" />
+</p>
+
 
 ---
 
@@ -229,3 +253,4 @@ Contributions are welcome!
 ---
 
 *Bookmark smarter. Learn faster. Never lose an important YouTube moment again.* 
+
