@@ -108,3 +108,68 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderBookmarks(data[videoId] || []);
   });
 });
+
+
+// export logic
+
+document.getElementById("exportBookmarks").addEventListener("click", async () => {
+  const activeTab = await getActiveTabURL();
+  
+  if (!activeTab?.url?.includes("youtube.com/watch")) {
+    alert("Open a YouTube video to export bookmarks");
+    return;
+  }
+  
+  const url = new URL(activeTab.url);
+  const videoId = url.searchParams.get("v");
+  
+  if (!videoId) {
+    alert("Video ID not found");
+    return;
+  }
+  const storageData = await chrome.storage.local.get([videoId]);
+
+  const exportData = [];
+
+  for (const videoId in storageData) {
+    const bookmarks = storageData[videoId];
+
+    if (!Array.isArray(bookmarks)) continue;
+
+
+    bookmarks.forEach((bookmark) => {
+
+      exportData.push({
+        videoId,
+        timestamp: formatTime(bookmark.time),
+        label: bookmark.desc,
+      });
+    });
+  }
+
+  if (!exportData.length) {
+    alert("No bookmarks found");
+    return;
+  }
+
+  downloadJSON(exportData);
+});
+
+
+function formatTime(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+function downloadJSON(data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: "application/json"
+  });
+  const url = URL.createObjectURL(blob);
+
+  chrome.downloads.download({
+    url,
+    filename: "youtube_bookmarks_export.json"
+  });
+}
