@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="popup.css" />
+    <script type="module" src="popup.js"></script>
+
+    <title>YouTube Bookmarks</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Bookmarks</h1>
+        <p class="subtitle">For this video</p>
+      </header>
+
+      <section
+        id="bookmarks"
+        class="bookmarks"
+        aria-live="polite"
+      ></section>
+
+      <div id="empty-state" class="empty hidden">
+        No bookmarks yet  
+        <span>Click the bookmark icon on the video</span>
+      </div>
+    </div>
+  </body>
+</html>
